@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://nkc4iv1tnsuk"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_5cli4"]
+[ext_resource type="Script" uid="uid://b7th5b7dsfot5" path="res://player.gd" id="1_5cli4"]
 [ext_resource type="Texture2D" uid="uid://bdly4dk2ip4ui" path="res://camel.jpg" id="1_n5np1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4xog"]
