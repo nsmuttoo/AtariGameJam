@@ -4,6 +4,7 @@ class_name Item
 @export var cooldown : int
 @export var slot : int
 @export var id : int
+@export var test:int
 
 
 # Called when the node enters the scene tree for the first time.
