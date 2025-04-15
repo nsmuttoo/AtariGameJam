@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://nkc4iv1tnsuk"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_5cli4"]
+[ext_resource type="Texture2D" uid="uid://bdly4dk2ip4ui" path="res://camel.jpg" id="1_n5np1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4xog"]
+size = Vector2(100, 98)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qihb4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n5np1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_5cli4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(424, 168)
+shape = SubResource("RectangleShape2D_t4xog")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(427, 171)
+sprite_frames = SubResource("SpriteFrames_qihb4")

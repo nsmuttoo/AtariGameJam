@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceg7sjewwcde0"]
+
+[ext_resource type="Texture2D" uid="uid://btwsw3s1m0t2j" path="res://icon.svg" id="1_xw0ir"]
+[ext_resource type="Script" path="res://Items/Slot4/humanLegs.gd" id="2_rre60"]
+
+[node name="humanLegs" type="Sprite2D"]
+texture = ExtResource("1_xw0ir")
+script = ExtResource("2_rre60")
+slot = 3
+id = 3

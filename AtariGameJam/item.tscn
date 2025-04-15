@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxxvhw1j4n83m"]
+
+[ext_resource type="Texture2D" uid="uid://btwsw3s1m0t2j" path="res://icon.svg" id="1_db8yj"]
+[ext_resource type="Script" path="res://Item.gd" id="2_dfjrk"]
+
+[node name="Item" type="Sprite2D"]
+texture = ExtResource("1_db8yj")
+script = ExtResource("2_dfjrk")
+cooldown = null
+slot = null
+id = null
