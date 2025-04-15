@@ -12,5 +12,6 @@ func _process(delta):
 	pass
 
 func action():
+	await get_tree().create_timer(cooldown).timeout
 	print("humanHead action")
 	pass

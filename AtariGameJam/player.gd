@@ -4,14 +4,25 @@ extends Area2D
 @export var health = 0
 
 @export var item1 = 0
-@export var item2 = 1
-@export var item3 = 2
-@export var item4 = 3
+@export var item2 = 0
+@export var item3 = 0
+@export var item4 = 0
+
+
 
 
 
 func _ready():
-	attack()
+	
+	item1 = get_node("humanHead")
+	item2 = get_node("humanArms")
+	item3 = get_node("humanChest")
+	item4 = get_node("humanLegs")
+	
+	item1.action()
+	item2.action()
+	item3.action()
+	item4.action()
 	pass
 	
 func _process(delta):
