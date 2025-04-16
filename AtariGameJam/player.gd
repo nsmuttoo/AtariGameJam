@@ -8,11 +8,26 @@ extends Area2D
 @export var item3 = 0
 @export var item4 = 0
 
+signal takeDamageSignal()
 
-
-
+func takeDamage(value):
+	
+	print("Player Take Damage: ", value)
+	
+	health = health-value
+	if(health<=0):
+		playerDeath()
+	
+	pass
+func playerDeath():
+	print("player died")
+	get_tree().quit() 
+	pass
 
 func _ready():
+	
+	process_mode = Node.PROCESS_MODE_PAUSABLE
+	takeDamageSignal.connect(takeDamage)
 	
 	item1 = get_node("humanHead")
 	item2 = get_node("humanArms")
@@ -40,3 +55,13 @@ func attack() ->void:
 func defend() ->void:
 	wait(1)
 	print("defend")
+	
+
+
+
+
+
+
+func _on_chicken_take_damage_signal(value):
+	takeDamage(value)
+	pass # Replace with function body.

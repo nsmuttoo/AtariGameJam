@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfvog30g75k3n"]
+
+[ext_resource type="Script" path="res://Enemies/chicken.gd" id="1_3in53"]
+
+[node name="chicken" type="CharacterBody2D"]
+script = ExtResource("1_3in53")

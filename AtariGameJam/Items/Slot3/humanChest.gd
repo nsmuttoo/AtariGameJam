@@ -3,6 +3,7 @@ extends Item
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	process_mode = Node.PROCESS_MODE_PAUSABLE
 	pass # Replace with function body.
 
 
@@ -10,6 +11,8 @@ func _ready():
 func _process(delta):
 	pass
 func action():
-	await get_tree().create_timer(cooldown).timeout
-	print("humanChest action")
+	while get_parent().health>0:
+		await get_tree().create_timer(cooldown).timeout
+		damageEnemy.emit(damage)
+		print("humanChest action dealt:", damage)
 	pass
