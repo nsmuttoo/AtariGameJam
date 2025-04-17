@@ -10,3 +10,5 @@ signal enemyHeal(value: int)
 signal enemyBlock(value: int)
 
 signal startFight
+signal playerWin
+signal gameOver

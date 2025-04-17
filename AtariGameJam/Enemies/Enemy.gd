@@ -14,7 +14,7 @@ class_name Enemy
 
 
 func _ready():
-	process_mode = Node.PROCESS_MODE_PAUSABLE
+	
 	
 	pass
 	

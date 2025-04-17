@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccmu6co57nehy"]
+
+[ext_resource type="Texture2D" uid="uid://dlnqpso5q0juq" path="res://ladyBunny.png" id="1_eyqos"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6vnur"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eyqos")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Reward Screen" type="Node2D"]
+
+[node name="DeadEnemy" type="AnimatedSprite2D" parent="."]
+position = Vector2(869, 489)
+rotation = 1.56933
+scale = Vector2(0.192, 0.192)
+sprite_frames = SubResource("SpriteFrames_6vnur")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 797.0
+offset_top = 142.0
+offset_right = 1001.0
+offset_bottom = 193.0
+text = "Harvest Loot"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 611.0
+offset_top = 303.0
+offset_right = 797.0
+offset_bottom = 352.0
+text = "Harvest Bunny Head (Head)"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 847.0
+offset_top = 304.0
+offset_right = 1033.0
+offset_bottom = 353.0
+text = "Harvest Shell: (Chest)"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 460.0
+offset_top = 578.0
+offset_right = 646.0
+offset_bottom = 627.0
+text = "Proceed"

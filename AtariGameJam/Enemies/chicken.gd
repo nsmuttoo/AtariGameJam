@@ -8,7 +8,7 @@ func _ready():
 	SignalBus.connect("enemyHeal",healUp)
 	SignalBus.connect("enemyBlock",blockUp)
 	SignalBus.connect("startFight",begin)
-	process_mode = Node.PROCESS_MODE_PAUSABLE
+	
 	
 	pass
 func begin():
@@ -59,7 +59,7 @@ func blockUp(value):
 	pass
 func chickenDeath():
 	print("Chicken Dies")
-	get_tree().quit() 
+	SignalBus.emit_signal("playerWin")
 	pass
 	
 func updateLabels():

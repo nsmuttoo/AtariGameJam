@@ -45,7 +45,7 @@ func blockUp(value):
 	updateLabels()
 func playerDeath():
 	print("player died")
-	get_tree().quit() 
+	SignalBus.emit_signal("gameOver")
 	pass
 func updateLabels():
 	$PlayerHealth.text = "Health: "+ str(health)
@@ -63,7 +63,7 @@ func _ready():
 	SignalBus.connect("playerBlock",blockUp)
 	SignalBus.connect("playerDamage",takeDamage)
 	SignalBus.connect("startFight",begin)
-	process_mode = Node.PROCESS_MODE_PAUSABLE
+	
 	takeDamageSignal.connect(takeDamage)
 	
 	item1 = get_node("humanHead")
@@ -83,13 +83,7 @@ func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
 	print("wait over")
 
-func attack() ->void:
-	await wait(3)
-	print("attack")
-func defend() ->void:
-	wait(1)
-	print("defend")
-	
+
 
 
 
