@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ba0o7mbec6avm"]
+[gd_scene load_steps=9 format=3 uid="uid://ba0o7mbec6avm"]
 
 [ext_resource type="PackedScene" uid="uid://nkc4iv1tnsuk" path="res://character_body_2d.tscn" id="1_keh67"]
 [ext_resource type="PackedScene" uid="uid://ewubjxmh45tf" path="res://Items/Slot1/humanHead.tscn" id="2_qiu85"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ceg7sjewwcde0" path="res://Items/Slot4/humanLegs.tscn" id="5_yy6v4"]
 [ext_resource type="PackedScene" uid="uid://cvrryewe62jj7" path="res://Enemies/chicken.tscn" id="6_jcvoo"]
 [ext_resource type="Script" path="res://Enemies/chicken.gd" id="7_eeio5"]
+[ext_resource type="Script" path="res://StartFight.gd" id="8_lie0w"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,29 +16,74 @@ maxHealth = 5
 health = 5
 
 [node name="humanHead" parent="Player" instance=ExtResource("2_qiu85")]
-cooldown = 5
-damage = 2
+position = Vector2(153, 51)
+cooldown = 13
+damage = 5
+heal = 1
+block = 2
 
 [node name="humanArms" parent="Player" instance=ExtResource("3_iy57y")]
-cooldown = 3
-damage = 1
+position = Vector2(263, 161)
+cooldown = 8
+damage = 3
+heal = 2
+block = 8
 
 [node name="humanChest" parent="Player" instance=ExtResource("4_8ncds")]
-cooldown = 8
+position = Vector2(153, 160)
+cooldown = 11
 damage = 4
 
 [node name="humanLegs" parent="Player" instance=ExtResource("5_yy6v4")]
-cooldown = 7
+position = Vector2(151, 278)
+cooldown = 13
 damage = 3
 
+[node name="PlayerHealth" type="Label" parent="Player"]
+offset_left = 85.0
+offset_top = 82.0
+offset_right = 175.0
+offset_bottom = 105.0
+
+[node name="PlayerBlock" type="Label" parent="Player"]
+offset_left = 86.0
+offset_top = 129.0
+offset_right = 176.0
+offset_bottom = 152.0
+
 [node name="Chicken" parent="." instance=ExtResource("6_jcvoo")]
+position = Vector2(110, -144)
 script = ExtResource("7_eeio5")
-health = 15
-cooldown = 3
+maxHealth = 25
+health = 25
+cooldown = 5
 damage = 2
+heal = 5
+block = 2
+
+[node name="enemyHealth" type="Label" parent="Chicken"]
+offset_left = 668.0
+offset_top = 235.0
+offset_right = 730.0
+offset_bottom = 258.0
+
+[node name="enemyBlock" type="Label" parent="Chicken"]
+offset_left = 670.0
+offset_top = 170.0
+offset_right = 710.0
+offset_bottom = 193.0
+
+[node name="StartFight" type="Button" parent="."]
+offset_left = 309.0
+offset_top = 35.0
+offset_right = 393.0
+offset_bottom = 63.0
+text = "Start Fight"
+script = ExtResource("8_lie0w")
 
 [connection signal="damageEnemy" from="Player/humanHead" to="Chicken" method="_on_human_head_damage_enemy"]
 [connection signal="damageEnemy" from="Player/humanArms" to="Chicken" method="_on_human_arms_damage_enemy"]
 [connection signal="damageEnemy" from="Player/humanChest" to="Chicken" method="_on_human_chest_damage_enemy"]
 [connection signal="damageEnemy" from="Player/humanLegs" to="Chicken" method="_on_human_legs_damage_enemy"]
 [connection signal="takeDamageSignal" from="Chicken" to="Player" method="_on_chicken_take_damage_signal"]
+[connection signal="pressed" from="StartFight" to="StartFight" method="_on_pressed"]

@@ -15,6 +15,8 @@ func _process(delta):
 func action():
 	while get_parent().health>0:
 		await get_tree().create_timer(cooldown).timeout
-		damageEnemy.emit(damage)
-		print("humanHead action dealt:", damage)
+		SignalBus.emit_signal("playerHeal",heal)
+		SignalBus.emit_signal("playerBlock", block)
+		SignalBus.emit_signal("enemyDamage",damage)
+		print("humanHead action dealt damage:",damage," heal:", heal, " block:", block)
 	pass

@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfvog30g75k3n"]
+[gd_scene load_steps=4 format=3 uid="uid://cfvog30g75k3n"]
 
 [ext_resource type="Script" path="res://Enemies/chicken.gd" id="1_3in53"]
+[ext_resource type="Texture2D" uid="uid://dlnqpso5q0juq" path="res://ladyBunny.png" id="2_l6eny"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pfjar"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l6eny")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="chicken" type="CharacterBody2D"]
 script = ExtResource("1_3in53")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(816, 320)
+scale = Vector2(0.244, 0.240758)
+sprite_frames = SubResource("SpriteFrames_pfjar")

@@ -6,8 +6,12 @@ class_name Item
 @export var id : int
 @export var test:int
 @export var damage:int
+@export var heal:int
+@export var block:int
 
 signal damageEnemy(value)
+signal healPlayer(value)
+signal blockPlayer(value)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	process_mode = Node.PROCESS_MODE_PAUSABLE
