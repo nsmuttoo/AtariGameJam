@@ -8,7 +8,7 @@ func _ready():
 	SignalBus.connect("enemyHeal",healUp)
 	SignalBus.connect("enemyBlock",blockUp)
 	SignalBus.connect("startFight",begin)
-	
+	SignalBus.updateBeastHealthbar.emit(health, maxHealth)
 	
 	pass
 func begin():
@@ -41,7 +41,8 @@ func takeDamage(value):
 	updateLabels()
 	if(health<0):
 		chickenDeath()
-	pass
+	
+	SignalBus.updateBeastHealthbar.emit(health, maxHealth)
 	
 func healUp(value):
 	print("chickenHealUp: ", value)

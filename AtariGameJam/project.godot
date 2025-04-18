@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="BuildABeast"
+<<<<<<< HEAD
 run/main_scene="uid://dqky03csx0d31"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+=======
+run/main_scene="uid://d1lgqhgwd18da"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+>>>>>>> 70857bc89e3026d6a48760ea53ab026d763f8607
 config/icon="res://icon.svg"
 
 [autoload]

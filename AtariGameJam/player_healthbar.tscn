@@ -6,25 +6,29 @@
 [ext_resource type="Script" path="res://health_label.gd" id="2_i84l2"]
 
 [node name="PlayerHealthbar" type="TextureProgressBar"]
-custom_minimum_size = Vector2(20, 1)
 anchors_preset = -1
-anchor_right = 1.17101
+anchor_right = 2.50868
 anchor_bottom = 0.558642
+offset_right = -2640.0
+offset_bottom = -332.0
 nine_patch_stretch = true
 texture_under = ExtResource("1_i84l2")
 texture_progress = ExtResource("2_h288p")
 script = ExtResource("1_nvgrr")
 metadata/_edit_use_anchors_ = true
 
-[node name="Health Label" type="Label" parent="."]
+[node name="Player Health Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -338.0
-offset_top = -171.0
-offset_right = 699.0
-offset_bottom = 495.0
-grow_vertical = 0
-text = "fuckfuckfuck"
+offset_left = -9.0
+offset_right = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "0"
 script = ExtResource("2_i84l2")
+metadata/_edit_use_anchors_ = true
