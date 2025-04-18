@@ -10,10 +10,10 @@ extends Area2D
 @export var item3 = 0
 @export var item4 = 0
 
-var item1name = "humanHead"
-var item2name = "humanArms"
-var item3name = "humanChest"
-var item4name = "humanLegs"
+@export var item1name = "humanHead"
+@export var item2name = "humanArms"
+@export var item3name = "humanChest"
+@export var item4name = "humanLegs"
 
 signal takeDamageSignal()
 
@@ -62,6 +62,10 @@ func updateLabels():
 	$PlayerBlock.text = "Block: " + str(blockHealth)
 	pass
 func begin():
+	SignalBus.emit_signal("timer1", item1.cooldown)
+	SignalBus.emit_signal("timer2", item2.cooldown)
+	SignalBus.emit_signal("timer3", item3.cooldown)
+	SignalBus.emit_signal("timer4", item4.cooldown)
 	item1.action()
 	item2.action()
 	item3.action()

@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://lqhsd1kjdkir" path="res://deadLadyBunny.png" id="1_k06fe"]
 [ext_resource type="PackedScene" uid="uid://nkc4iv1tnsuk" path="res://character_body_2d.tscn" id="2_1wotv"]
-[ext_resource type="Script" uid="uid://dj8uth1su4wbf" path="res://Harvest Head.gd" id="2_nr8na"]
-[ext_resource type="Script" uid="uid://b2hjjr25pi23v" path="res://Harvest Shell.gd" id="3_xdfu1"]
-[ext_resource type="Script" uid="uid://xfsrdhfjrgkf" path="res://Proceed.gd" id="4_um87y"]
-[ext_resource type="Script" uid="uid://b137jcfy6cgvs" path="res://ShellLabel.gd" id="6_hqi1y"]
-[ext_resource type="Script" uid="uid://bhkoagys7ex4q" path="res://Bunnyheadlabel.gd" id="6_sulew"]
+[ext_resource type="Script" path="res://Harvest Head.gd" id="2_nr8na"]
+[ext_resource type="Script" path="res://Harvest Shell.gd" id="3_xdfu1"]
+[ext_resource type="Script" path="res://Proceed.gd" id="4_um87y"]
+[ext_resource type="Script" path="res://ShellLabel.gd" id="6_hqi1y"]
+[ext_resource type="Script" path="res://Bunnyheadlabel.gd" id="6_sulew"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6vnur"]
 animations = [{

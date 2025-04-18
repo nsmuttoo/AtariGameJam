@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://b14uw6odiwjvr"]
 
 [ext_resource type="Texture2D" uid="uid://snmctaafujxs" path="res://Screenshot 2025-04-18 155524.png" id="1_i84l2"]
-[ext_resource type="Script" uid="uid://bxse32y2ipcw2" path="res://player_healthbar.gd" id="1_nvgrr"]
+[ext_resource type="Script" path="res://player_healthbar.gd" id="1_nvgrr"]
 [ext_resource type="Texture2D" uid="uid://o8sbxrqu2q74" path="res://Screenshot 2025-04-18 155813.png" id="2_h288p"]
-[ext_resource type="Script" uid="uid://clvv0ll4b32g2" path="res://health_label.gd" id="2_i84l2"]
+[ext_resource type="Script" path="res://health_label.gd" id="2_i84l2"]
 
 [node name="PlayerHealthbar" type="TextureProgressBar"]
 custom_minimum_size = Vector2(20, 1)

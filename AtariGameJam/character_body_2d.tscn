@@ -1,11 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://nkc4iv1tnsuk"]
+[gd_scene load_steps=17 format=3 uid="uid://nkc4iv1tnsuk"]
 
-[ext_resource type="Script" uid="uid://7q0fmvp7l8xo" path="res://player.gd" id="1_5cli4"]
+[ext_resource type="Script" path="res://player.gd" id="1_5cli4"]
 [ext_resource type="Texture2D" uid="uid://bdly4dk2ip4ui" path="res://camel.jpg" id="1_n5np1"]
 [ext_resource type="PackedScene" uid="uid://ewubjxmh45tf" path="res://Items/Slot1/humanHead.tscn" id="3_jydss"]
 [ext_resource type="PackedScene" uid="uid://bv3uhlliwoiom" path="res://Items/Slot2/humanArms.tscn" id="4_6bffv"]
 [ext_resource type="PackedScene" uid="uid://ddyx004463s6m" path="res://Items/Slot3/humanChest.tscn" id="5_1pguc"]
 [ext_resource type="PackedScene" uid="uid://ceg7sjewwcde0" path="res://Items/Slot4/humanLegs.tscn" id="6_kj4n3"]
+[ext_resource type="Script" path="res://Item1ProgressBar.gd" id="7_skhm0"]
+[ext_resource type="Script" path="res://Item1Timer.gd" id="8_oygy1"]
+[ext_resource type="Script" path="res://Item2ProgressBar.gd" id="9_kwj47"]
+[ext_resource type="Script" path="res://Item2Timer.gd" id="10_bp4js"]
+[ext_resource type="Script" path="res://Item3ProgressBar.gd" id="11_4fos2"]
+[ext_resource type="Script" path="res://Item3Timer.gd" id="12_3mtd2"]
+[ext_resource type="Script" path="res://Item4ProgressBar.gd" id="13_c1ljt"]
+[ext_resource type="Script" path="res://Item4Timer.gd" id="14_yx2wm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4xog"]
 size = Vector2(94, 91)
@@ -57,3 +65,51 @@ slot = 2
 [node name="ladyBunnyHead" parent="." instance=ExtResource("3_jydss")]
 visible = false
 cooldown = 5
+
+[node name="Item1ProgressBar" type="ProgressBar" parent="."]
+offset_left = 78.0
+offset_top = 50.0
+offset_right = 232.0
+offset_bottom = 77.0
+show_percentage = false
+script = ExtResource("7_skhm0")
+
+[node name="Item1Timer" type="Timer" parent="Item1ProgressBar"]
+wait_time = 4.521
+script = ExtResource("8_oygy1")
+
+[node name="Item2ProgressBar" type="ProgressBar" parent="."]
+offset_left = 77.0
+offset_top = 83.0
+offset_right = 231.0
+offset_bottom = 110.0
+show_percentage = false
+script = ExtResource("9_kwj47")
+
+[node name="Item2Timer" type="Timer" parent="Item2ProgressBar"]
+wait_time = 4.521
+script = ExtResource("10_bp4js")
+
+[node name="Item3ProgressBar" type="ProgressBar" parent="."]
+offset_left = 76.0
+offset_top = 117.0
+offset_right = 230.0
+offset_bottom = 144.0
+show_percentage = false
+script = ExtResource("11_4fos2")
+
+[node name="Item3Timer" type="Timer" parent="Item3ProgressBar"]
+wait_time = 4.521
+script = ExtResource("12_3mtd2")
+
+[node name="Item4ProgressBar" type="ProgressBar" parent="."]
+offset_left = 76.0
+offset_top = 148.0
+offset_right = 230.0
+offset_bottom = 175.0
+show_percentage = false
+script = ExtResource("13_c1ljt")
+
+[node name="Item4Timer" type="Timer" parent="Item4ProgressBar"]
+wait_time = 4.521
+script = ExtResource("14_yx2wm")
