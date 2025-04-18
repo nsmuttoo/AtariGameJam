@@ -12,3 +12,6 @@ signal enemyBlock(value: int)
 signal startFight
 signal playerWin
 signal gameOver
+
+signal equipItem(itemName: String)
+signal buttonInvis

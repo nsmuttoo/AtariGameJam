@@ -1,18 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccmu6co57nehy"]
+[gd_scene load_steps=9 format=3 uid="uid://bb6yr3idw5hv4"]
 
-[ext_resource type="Texture2D" uid="uid://lqhsd1kjdkir" path="res://deadLadyBunny.png" id="1_k06fe"]
-[ext_resource type="PackedScene" uid="uid://nkc4iv1tnsuk" path="res://character_body_2d.tscn" id="2_1wotv"]
-[ext_resource type="Script" path="res://Harvest Head.gd" id="2_nr8na"]
-[ext_resource type="Script" path="res://Harvest Shell.gd" id="3_xdfu1"]
-[ext_resource type="Script" path="res://Proceed.gd" id="4_um87y"]
-[ext_resource type="Script" path="res://ShellLabel.gd" id="6_hqi1y"]
-[ext_resource type="Script" path="res://Bunnyheadlabel.gd" id="6_sulew"]
+[ext_resource type="Texture2D" uid="uid://dxhrfqk0dtdek" path="res://deadtigercow.png" id="1_082o4"]
+[ext_resource type="Script" path="res://Harvest Head.gd" id="2_dv7ny"]
+[ext_resource type="Script" path="res://Harvest Shell.gd" id="3_3h3ui"]
+[ext_resource type="Script" path="res://Proceed.gd" id="4_q38w1"]
+[ext_resource type="PackedScene" uid="uid://nkc4iv1tnsuk" path="res://character_body_2d.tscn" id="5_fi45d"]
+[ext_resource type="Script" path="res://Bunnyheadlabel.gd" id="6_mpq0k"]
+[ext_resource type="Script" path="res://ShellLabel.gd" id="7_sg4u0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6vnur"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_k06fe")
+"texture": ExtResource("1_082o4")
 }],
 "loop": true,
 "name": &"default",
@@ -54,7 +54,7 @@ offset_top = 303.0
 offset_right = 797.0
 offset_bottom = 352.0
 text = "Harvest Bunny Head (Head)"
-script = ExtResource("2_nr8na")
+script = ExtResource("2_dv7ny")
 
 [node name="Harvest Shell" type="Button" parent="."]
 offset_left = 847.0
@@ -62,7 +62,7 @@ offset_top = 304.0
 offset_right = 1033.0
 offset_bottom = 353.0
 text = "Harvest Shell: (Chest)"
-script = ExtResource("3_xdfu1")
+script = ExtResource("3_3h3ui")
 
 [node name="Proceed" type="Button" parent="."]
 offset_left = 460.0
@@ -70,9 +70,9 @@ offset_top = 578.0
 offset_right = 646.0
 offset_bottom = 627.0
 text = "Proceed"
-script = ExtResource("4_um87y")
+script = ExtResource("4_q38w1")
 
-[node name="Player" parent="." instance=ExtResource("2_1wotv")]
+[node name="Player" parent="." instance=ExtResource("5_fi45d")]
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 611.0
@@ -85,7 +85,7 @@ Block: 0
 Heal: 0
 **When receiving damage 
 25% chance to dodge"
-script = ExtResource("6_sulew")
+script = ExtResource("6_mpq0k")
 
 [node name="Label3" type="Label" parent="."]
 offset_left = 836.0
@@ -97,7 +97,7 @@ Damage: #
 Block: 0
 Heal: 0
 "
-script = ExtResource("6_hqi1y")
+script = ExtResource("7_sg4u0")
 
 [connection signal="pressed" from="Harvest Head" to="Harvest Head" method="_on_pressed"]
 [connection signal="pressed" from="Harvest Shell" to="Harvest Shell" method="_on_pressed"]

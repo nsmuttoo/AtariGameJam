@@ -10,9 +10,19 @@ extends Area2D
 @export var item3 = 0
 @export var item4 = 0
 
+var item1name = "humanHead"
+var item2name = "humanArms"
+var item3name = "humanChest"
+var item4name = "humanLegs"
+
 signal takeDamageSignal()
 
 func takeDamage(value):
+	if(item1name == "ladyBunnyHead"):
+		if(randi_range(0,3) == 3):
+			value = 0
+			print("Dodged!")
+	
 	print("Player Take Damage: ", value)
 	var hold =value
 	
@@ -58,24 +68,44 @@ func begin():
 	item4.action()
 	pass
 func _ready():
-	updateLabels()
+	
 	SignalBus.connect("playerHeal",healUp)
 	SignalBus.connect("playerBlock",blockUp)
 	SignalBus.connect("playerDamage",takeDamage)
 	SignalBus.connect("startFight",begin)
+	SignalBus.connect("equipItem", equipItem)
 	
 	takeDamageSignal.connect(takeDamage)
 	
-	item1 = get_node("humanHead")
-	item2 = get_node("humanArms")
-	item3 = get_node("humanChest")
-	item4 = get_node("humanLegs")
+	item1 = get_node(item1name)
+	item2 = get_node(item2name)
+	item3 = get_node(item3name)
+	item4 = get_node(item4name)
 	
 
 	pass
 	
 func _process(delta):
 	
+	pass
+	
+	
+func equipItem(name):
+	var slot = get_node(name).slot
+	if(slot == 0):
+		item1name = name
+	if(slot == 1):
+		item2name = name
+	if(slot == 2):
+		item3name = name
+	if(slot == 3):
+		item4name = name
+			
+	item1 = get_node(item1name)
+	item2 = get_node(item2name)
+	item3 = get_node(item3name)
+	item4 = get_node(item4name)
+	print(item3name)
 	pass
 
 func wait(seconds: float) -> void:

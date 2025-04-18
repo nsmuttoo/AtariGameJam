@@ -1,21 +1,16 @@
-extends Node2D
-
-
-
+extends Label
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SignalBus.connect("playerWin", playerWin)
-	SignalBus.connect("gameOver", gameOver)
+	SignalBus.connect("buttonInvis",buttonInvis)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-func gameOver():
+func buttonInvis():
+	self.visible = !self.visible
 	pass
-func playerWin():
-	get_tree().change_scene_to_file("res://reward_screenTigerCow.tscn")
-	pass
+

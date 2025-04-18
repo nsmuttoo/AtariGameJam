@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2wdx76qnsn7"]
+
+[ext_resource type="Script" path="res://World.gd" id="1_5skcm"]
+[ext_resource type="PackedScene" uid="uid://nkc4iv1tnsuk" path="res://character_body_2d.tscn" id="2_p87ac"]
+[ext_resource type="Script" path="res://StartFight.gd" id="3_xawwu"]
+[ext_resource type="PackedScene" uid="uid://dyv8jwgsyj4bc" path="res://Enemies/TigerCow.tscn" id="4_tr5ri"]
+
+[node name="LadyBunnyFight" type="Node2D"]
+script = ExtResource("1_5skcm")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_top = 502.0
+offset_right = 1207.0
+offset_bottom = 1004.0
+color = Color(0.0602738, 0.527075, 0.319236, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_top = 4.0
+offset_right = 1208.0
+offset_bottom = 506.0
+color = Color(0.470111, 0.77041, 0.978018, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_p87ac")]
+maxHealth = 5
+health = 5
+
+[node name="PlayerHealth" type="Label" parent="Player"]
+offset_left = 85.0
+offset_top = 82.0
+offset_right = 175.0
+offset_bottom = 105.0
+
+[node name="PlayerBlock" type="Label" parent="Player"]
+offset_left = 86.0
+offset_top = 129.0
+offset_right = 176.0
+offset_bottom = 152.0
+
+[node name="StartFight" type="Button" parent="."]
+offset_left = 309.0
+offset_top = 35.0
+offset_right = 393.0
+offset_bottom = 63.0
+text = "Start Fight"
+script = ExtResource("3_xawwu")
+
+[node name="chicken" parent="." instance=ExtResource("4_tr5ri")]
+position = Vector2(110, 116)
+
+[node name="enemyBlock" type="Label" parent="chicken"]
+offset_left = 750.0
+offset_top = 219.0
+offset_right = 790.0
+offset_bottom = 242.0
+
+[node name="enemyHealth" type="Label" parent="chicken"]
+offset_left = 748.0
+offset_top = 284.0
+offset_right = 810.0
+offset_bottom = 307.0
+
+[connection signal="pressed" from="StartFight" to="StartFight" method="_on_pressed"]
