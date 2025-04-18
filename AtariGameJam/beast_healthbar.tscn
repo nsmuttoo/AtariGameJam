@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ci6yps0t0p2po"]
+
+[ext_resource type="Texture2D" uid="uid://snmctaafujxs" path="res://Screenshot 2025-04-18 155524.png" id="1_e1mon"]
+[ext_resource type="Script" uid="uid://cxponuxmbn2r1" path="res://beast_healthbar.gd" id="1_tddk5"]
+[ext_resource type="Script" uid="uid://btna6j2xoe1ak" path="res://beast_health_label.gd" id="2_mm3js"]
+[ext_resource type="Texture2D" uid="uid://o8sbxrqu2q74" path="res://Screenshot 2025-04-18 155813.png" id="2_uye0d"]
+
+[node name="beast_healthbar" type="TextureProgressBar"]
+offset_right = 250.0
+offset_bottom = 30.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_e1mon")
+texture_progress = ExtResource("2_uye0d")
+script = ExtResource("1_tddk5")
+
+[node name="Beast Health Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -7.5
+offset_right = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "0"
+script = ExtResource("2_mm3js")

@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://c2723dvijw3ca" path="res://World.gd" id="1_0dvem"]
 [ext_resource type="PackedScene" uid="uid://nkc4iv1tnsuk" path="res://character_body_2d.tscn" id="1_keh67"]
 [ext_resource type="PackedScene" uid="uid://b14uw6odiwjvr" path="res://player_healthbar.tscn" id="3_p1v5b"]
+[ext_resource type="PackedScene" uid="uid://ci6yps0t0p2po" path="res://beast_healthbar.tscn" id="4_wygdx"]
 [ext_resource type="PackedScene" uid="uid://cvrryewe62jj7" path="res://Enemies/chicken.tscn" id="6_jcvoo"]
-[ext_resource type="Script" uid="uid://d3okhbkw0mq7o" path="res://canvas_layer.gd" id="6_wygdx"]
 [ext_resource type="Script" uid="uid://cjyqxq1rb0r2r" path="res://Enemies/chicken.gd" id="7_eeio5"]
 [ext_resource type="Script" uid="uid://nmp07m42ko6e" path="res://StartFight.gd" id="8_lie0w"]
 
@@ -25,6 +25,42 @@ offset_top = 503.0
 offset_right = 1356.0
 offset_bottom = 942.0
 color = Color(0.0572514, 0.509024, 0.3077, 1)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -389.0
+offset_right = 1509.0
+offset_bottom = 1007.0
+
+[node name="StartFight" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 391.0
+offset_right = 1019.0
+offset_bottom = 422.0
+text = "Start Fight"
+script = ExtResource("8_lie0w")
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerHealthbar" parent="Control" instance=ExtResource("3_p1v5b")]
+z_index = 8
+layout_mode = 1
+anchor_left = 0.211275
+anchor_top = -0.0148957
+anchor_right = 0.211275
+anchor_bottom = -0.0148957
+offset_left = 140.0
+offset_top = 562.0
+offset_right = 325.0
+offset_bottom = 593.0
+
+[node name="beast_healthbar" parent="Control" instance=ExtResource("4_wygdx")]
+layout_mode = 0
+offset_left = 1286.0
+offset_top = 592.0
+offset_right = 1536.0
+offset_bottom = 622.0
 
 [node name="Player" parent="." instance=ExtResource("1_keh67")]
 position = Vector2(234, 396)
@@ -69,31 +105,9 @@ offset_right = 710.0
 offset_bottom = 193.0
 metadata/_edit_use_anchors_ = true
 
-[node name="StartFight" type="Button" parent="."]
-offset_left = 541.0
-offset_top = 391.0
-offset_right = 630.0
-offset_bottom = 422.0
-text = "Start Fight"
-script = ExtResource("8_lie0w")
-metadata/_edit_use_anchors_ = true
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(588, 505)
 zoom = Vector2(0.75, 0.75)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("6_wygdx")
-
-[node name="PlayerHealthbar" parent="CanvasLayer" instance=ExtResource("3_p1v5b")]
-anchor_left = -0.416
-anchor_top = 0.077
-anchor_right = -0.15
-anchor_bottom = 0.151
-offset_left = -25.768
-offset_top = -16.896
-offset_right = -3.2
-offset_bottom = -16.848
-
+[connection signal="pressed" from="Control/StartFight" to="Control/StartFight" method="_on_pressed"]
 [connection signal="takeDamageSignal" from="Chicken" to="Player" method="_on_chicken_take_damage_signal"]
-[connection signal="pressed" from="StartFight" to="StartFight" method="_on_pressed"]

@@ -17,3 +17,4 @@ signal equipItem(itemName: String)
 signal buttonInvis
 
 signal updatePlayerHealthbar(health : int, maxHealth : int)
+signal updateBeastHealthbar(health : int, maxHealth : int)
