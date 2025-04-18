@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ewubjxmh45tf"]
+
+[ext_resource type="Texture2D" uid="uid://btwsw3s1m0t2j" path="res://icon.svg" id="1_kohd1"]
+[ext_resource type="Script" uid="uid://1cbrtam74rst" path="res://Items/Slot1/humanHead.gd" id="2_pipuq"]
+
+[node name="humanHead" type="Sprite2D"]
+texture = ExtResource("1_kohd1")
+script = ExtResource("2_pipuq")

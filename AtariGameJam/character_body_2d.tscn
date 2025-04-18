@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://nkc4iv1tnsuk"]
+
+[ext_resource type="Script" uid="uid://7q0fmvp7l8xo" path="res://player.gd" id="1_5cli4"]
+[ext_resource type="Texture2D" uid="uid://bdly4dk2ip4ui" path="res://camel.jpg" id="1_n5np1"]
+[ext_resource type="PackedScene" uid="uid://ewubjxmh45tf" path="res://Items/Slot1/humanHead.tscn" id="3_jydss"]
+[ext_resource type="PackedScene" uid="uid://bv3uhlliwoiom" path="res://Items/Slot2/humanArms.tscn" id="4_6bffv"]
+[ext_resource type="PackedScene" uid="uid://ddyx004463s6m" path="res://Items/Slot3/humanChest.tscn" id="5_1pguc"]
+[ext_resource type="PackedScene" uid="uid://ceg7sjewwcde0" path="res://Items/Slot4/humanLegs.tscn" id="6_kj4n3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4xog"]
+size = Vector2(94, 91)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qihb4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n5np1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_5cli4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4.5)
+shape = SubResource("RectangleShape2D_t4xog")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_qihb4")
+
+[node name="humanHead" parent="." instance=ExtResource("3_jydss")]
+visible = false
+cooldown = 5
+damage = 500
+
+[node name="humanArms" parent="." instance=ExtResource("4_6bffv")]
+visible = false
+cooldown = 4
+
+[node name="humanChest" parent="." instance=ExtResource("5_1pguc")]
+visible = false
+cooldown = 3
+
+[node name="humanLegs" parent="." instance=ExtResource("6_kj4n3")]
+visible = false
+cooldown = 2
+
+[node name="ladyBunnyShell" parent="." instance=ExtResource("3_jydss")]
+visible = false
+cooldown = 5
+slot = 2
+
+[node name="ladyBunnyHead" parent="." instance=ExtResource("3_jydss")]
+visible = false
+cooldown = 5

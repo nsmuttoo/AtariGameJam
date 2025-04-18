@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b14uw6odiwjvr"]
+
+[ext_resource type="Texture2D" uid="uid://snmctaafujxs" path="res://Screenshot 2025-04-18 155524.png" id="1_i84l2"]
+[ext_resource type="Script" uid="uid://bxse32y2ipcw2" path="res://player_healthbar.gd" id="1_nvgrr"]
+[ext_resource type="Texture2D" uid="uid://o8sbxrqu2q74" path="res://Screenshot 2025-04-18 155813.png" id="2_h288p"]
+[ext_resource type="Script" uid="uid://clvv0ll4b32g2" path="res://health_label.gd" id="2_i84l2"]
+
+[node name="PlayerHealthbar" type="TextureProgressBar"]
+custom_minimum_size = Vector2(20, 1)
+anchors_preset = -1
+anchor_right = 1.17101
+anchor_bottom = 0.558642
+nine_patch_stretch = true
+texture_under = ExtResource("1_i84l2")
+texture_progress = ExtResource("2_h288p")
+script = ExtResource("1_nvgrr")
+metadata/_edit_use_anchors_ = true
+
+[node name="Health Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -338.0
+offset_top = -171.0
+offset_right = 699.0
+offset_bottom = 495.0
+grow_vertical = 0
+text = "fuckfuckfuck"
+script = ExtResource("2_i84l2")
