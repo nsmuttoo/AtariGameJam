@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="BuildABeast"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+run/main_scene="uid://dqky03csx0d31"
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://Global.gd"
+SignalBus="*res://SignalBus.gd"
 
 [rendering]
 

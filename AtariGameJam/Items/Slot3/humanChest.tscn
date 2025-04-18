@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddyx004463s6m"]
 
 [ext_resource type="Texture2D" uid="uid://btwsw3s1m0t2j" path="res://icon.svg" id="1_4p575"]
-[ext_resource type="Script" path="res://Items/Slot3/humanChest.gd" id="2_6ayj4"]
+[ext_resource type="Script" uid="uid://bqumiyyab0rqc" path="res://Items/Slot3/humanChest.gd" id="2_6ayj4"]
 
 [node name="humanChest" type="Sprite2D"]
 texture = ExtResource("1_4p575")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyv8jwgsyj4bc"]
+
+[ext_resource type="Script" uid="uid://cjyqxq1rb0r2r" path="res://Enemies/chicken.gd" id="1_i4kva"]
+[ext_resource type="Texture2D" uid="uid://bmyvm16b6yed0" path="res://tigerCow.png" id="2_fcfhj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pfjar"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fcfhj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="chicken" type="CharacterBody2D"]
+script = ExtResource("1_i4kva")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(816, 320)
+scale = Vector2(0.244, 0.240758)
+sprite_frames = SubResource("SpriteFrames_pfjar")

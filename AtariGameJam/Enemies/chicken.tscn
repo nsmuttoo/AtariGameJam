@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvrryewe62jj7"]
+
+[ext_resource type="Script" uid="uid://61uemwdkdiy" path="res://Enemies/Enemy.gd" id="1_31ptf"]
+[ext_resource type="Texture2D" uid="uid://dlnqpso5q0juq" path="res://ladyBunny.png" id="2_snho6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qeenb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_snho6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_31ptf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 1)
+scale = Vector2(0.244, 0.240758)
+sprite_frames = SubResource("SpriteFrames_qeenb")
