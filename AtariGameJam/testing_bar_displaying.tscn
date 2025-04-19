@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhtcmwkuh71i1"]
+
+[ext_resource type="PackedScene" uid="uid://dvmk8uupxaf0p" path="res://player_healthbar.tscn" id="1_jsowk"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="PlayerHealthbar" parent="." instance=ExtResource("1_jsowk")]
+
+[node name="Camera2D" type="Camera2D" parent="."]

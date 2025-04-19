@@ -15,3 +15,10 @@ signal gameOver
 
 signal equipItem(itemName: String)
 signal buttonInvis
+
+signal updatePlayerHealthbar(health : int, maxHealth : int)
+
+signal timer1(cooldown: float)
+signal timer2(cooldown: float)
+signal timer3(cooldown: float)
+signal timer4(cooldown: float)

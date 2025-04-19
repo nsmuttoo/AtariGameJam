@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dyv8jwgsyj4bc" path="res://Enemies/TigerCow.tscn" id="4_tr5ri"]
 
 [node name="LadyBunnyFight" type="Node2D"]
+position = Vector2(0, -4)
 script = ExtResource("1_5skcm")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
@@ -22,6 +23,7 @@ offset_bottom = 506.0
 color = Color(0.470111, 0.77041, 0.978018, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_p87ac")]
+position = Vector2(316, 404)
 maxHealth = 5
 health = 5
 
